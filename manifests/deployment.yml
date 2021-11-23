@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kuber 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kuber
+  template:
+    metadata:
+      labels:
+        app: kuber 
+    spec:
+      containers:
+        - name: kuber 
+          image: sjleeacr.azurecr.io/kuber
+          ports:
+          - containerPort: 80
